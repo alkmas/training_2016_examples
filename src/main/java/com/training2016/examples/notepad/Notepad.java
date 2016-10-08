@@ -33,7 +33,7 @@ public class Notepad {
 
 	/**
 	 * ¬ставить запись в позицию numRecord массива.
-	 * ≈сли позици€ >= позиции свободной €чейки, то вставить в конец массива
+	 * ≈сли позици€ больше или равна позиции свободной €чейки, то вставить в конец массива
 	 * @param numRecord
 	 * номер позиции
 	 * @param item
@@ -70,9 +70,18 @@ public class Notepad {
 			System.out.println("The record number:[" + numRecord + "] doesn't exist.");
 		}
 	}
-
 	
-	public Record getRecord(int numRecord) {
+	/**
+	 * ѕолучить запись по номеру numRecord
+	 * @param numRecord
+	 * номер записи
+	 * @return
+	 * возвращаема€ запись
+	 * @throws ArrayIndexOutOfBoundsException
+	 */
+	public Record getRecord(int numRecord) throws ArrayIndexOutOfBoundsException {
+		if (numRecord >= position)
+			throw new ArrayIndexOutOfBoundsException("The record by number " + numRecord + " doesn't exist.");
 		return records[numRecord];
 	}
 	
@@ -86,10 +95,6 @@ public class Notepad {
 			newRecords[i] = records[i];
 		}
 		records = newRecords;
-	}
-	
-	private void checkPosition() {
-		
 	}
 	
 	/**
@@ -125,5 +130,11 @@ public class Notepad {
 		notepad.delRecord(2);
 		notepad.insertRecord(1, "¬ставл€ем запись");
 		System.out.println(notepad);
+		
+		try {
+			notepad.getRecord(23);
+		} catch (ArrayIndexOutOfBoundsException e) {
+			System.out.println(e);
+		}
 	}
 }
