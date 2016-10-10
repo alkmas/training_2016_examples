@@ -24,17 +24,19 @@ public class MainClass {
 
 		Employee beginner = new Employee("Boris");
 		beginner.setStationery(listBeginner);
+		System.out.println("------------------UnSorted---------------------");
+
 		System.out.println(beginner);
 		
-		System.out.println("Sorted By Name");
+		System.out.println("----------------Sorted By Name-----------------");
 		listBeginner.sort(new SortedByName<Stationery>());
 		System.out.println(beginner);
 
-		System.out.println("Sorted By Value");
+		System.out.println("---------------Sorted By Value-----------------");
 		listBeginner.sort(new SortedByValue<Stationery>());
 		System.out.println(beginner);
 
-		System.out.println("Sorted By Value and Name");
+		System.out.println("-----------Sorted By Value and Name------------");
 		listBeginner.sort(new Comparator<Stationery>() {
 			
 			public int compare(Stationery o1, Stationery o2) {
