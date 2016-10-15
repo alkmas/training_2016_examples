@@ -4,7 +4,6 @@
 package com.training2016.examples.submarine;
 
 import java.lang.annotation.Documented;
-import java.lang.annotation.Target;
 
 
 @Documented

@@ -1,7 +1,5 @@
 package com.training2016.examples.stationery2;
 
-import java.util.ArrayList;
-
 /**
  * Employees class 
  * @author alex

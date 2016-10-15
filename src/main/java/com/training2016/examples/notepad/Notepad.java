@@ -1,7 +1,5 @@
 package com.training2016.examples.notepad;
 
-import java.util.Arrays;
-
 /**
  * Класс Блокнот
  * @author alex
